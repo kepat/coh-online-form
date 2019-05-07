@@ -62,7 +62,7 @@
           })
           .done(function(data) {
             // Hide the modal
-            clearModal();   
+            clearModal(false);   
 
             // Display the info
             if (data.Message == 'OK') { 
@@ -85,7 +85,7 @@
     });
 
     // Trigger the click for the final button
-    $('btnSuccess').click(function() {
+    $('#btnSuccess').click(function() {
       location.reload();
     });
 
@@ -131,10 +131,10 @@
         }
 
         // Append the options
-        $('#churchNameFriend').append(options);     
+        $('#churchNameFriend').append(options);    
 
         // Hide the modal
-        clearModal();   
+        clearModal(true);    
       })
       .fail(function(error) {
           infoModal('Failed', 'Unable to load the churches.', false);
@@ -170,14 +170,17 @@
   }
 
   // Clear the modal form
-  function clearModal() {
+  function clearModal(hide) {
     $('#modalTitle').html('');
     $('#modalMessageBody').html('');
     $('#modalHeader').addClass('d-none');
     $('#modalMessageBody').addClass('d-none');
     $('#modalLoadingBody').addClass('d-none');
     $('#modalFooter').addClass('d-none');
-    $('#modalDialog').modal('hide');
+
+    if (hide) {
+      $('#modalDialog').modal('hide');
+    }
   }
 
 })();
