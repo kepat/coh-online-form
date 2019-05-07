@@ -1,0 +1,16 @@
+h3, label, span {
+	color: #ffffff;
+}
+
+input, select, textarea {
+	border-radius: 10px !important;
+}
+
+body {
+	background: url('../images/background-image.jpg') no-repeat fixed center;
+	background-size: cover;
+}
+
+.center {
+	text-align: center;
+}
