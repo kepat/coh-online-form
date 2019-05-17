@@ -7,7 +7,8 @@
 	<title>COH Response Form</title>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
 </head>
 <body class="bg-light">
 
@@ -22,7 +23,7 @@
   			<div class="row">
 
              	<div class="col-md-6 mb-3">
-                	<label for="firstName">Given Name (First Name)</label>
+                	<label for="firstName">Given Name (First Name) <br> 名</label>
                 	<input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                 	<div class="invalid-feedback">
                   		Valid first name is required.
@@ -30,7 +31,7 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="lastName">Surname (Last Name)</label>
+                	<label for="lastName">Surname (Last Name) <br> 姓</label>
                 	<input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                 	<div class="invalid-feedback">
                  		Valid last name is required.
@@ -38,7 +39,7 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-					<label for="gender">Gender <span>(Optional)</span></label>
+					<label for="gender">Gender <span>(Optional)</span> <br> 性别</label>
 					<select class="custom-select d-block w-100" id="gender">
 						<option value="">Choose...</option>
 						<option value="M">Male</option>
@@ -47,7 +48,7 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-					<label for="ageGroup">Age Group <span>(Optional)</span></label>
+					<label for="ageGroup">Age Group <span>(Optional)</span> <br> 年龄段</label>
 					<select class="custom-select d-block w-100" id="ageGroup">
 						<option value="">Choose...</option>
 						<option value="A">6 years old and below</option>
@@ -62,15 +63,15 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="phoneNo">Phone No.</label>
-                	<input type="tel" class="form-control" id="phoneNo" value="+65" required>
+                	<label for="phoneNo">Mobile No. <br> 请手机号码</label>
+                	<input type="tel" class="form-control" id="phoneNo" value="+65" required pattern=".{4,}">
                 	<div class="invalid-feedback">
 	                	Valid phone no is required.
 	             	</div>
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="email">Email Address<span>(Optional)</span></label>
+                	<label for="email">Email Address<span>(Optional)</span> <br> 电邮地址</label>
                 	<input type="email" class="form-control" id="email" placeholder="email@example.com">
                 	<div class="invalid-feedback">
 	                	Please enter a valid email address.
@@ -78,14 +79,14 @@
               	</div>
               
               	<div class="col-md-6 mb-3">
-					<label for="decision">Decision Made</label>
+					<label for="decision">Decision Made <br> 我的决定</label>
 					<select class="custom-select d-block w-100" id="decision" required>
 						<option value="">Choose...</option>
-						<option value="A">I just prayed to receive Jesus Christ</option>
-						<option value="B">I just rededicated my life to Jesus Christ</option>
-						<option value="C">I am interested to find out more about Jesus Christ</option>
-						<option value="D">I would like to join a Church</option>
-						<option value="E">Others</option>
+						<option value="A">I just prayed to receive Jesus Christ - 我刚刚透过祷告接受了耶稣基督</option>
+						<option value="B">I just rededicated my life to Jesus Christ - 我刚刚重新把生命献给了耶稣基督</option>
+						<option value="C">I am interested to find out more about Jesus Christ - 我有兴趣了解更多有关耶稣基督的信息</option>
+						<option value="D">I would like to join a Church - 我想参加教会</option>
+						<option value="E">Others - 其他</option>
 					</select>
 					<div class="invalid-feedback">
 	                	Valid decision is required.
@@ -93,7 +94,7 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="postalCode">Home Postal Code</label>
+                	<label for="postalCode">Home Postal Code <br> 家邮政号码</label>
                 	<input type="text" class="form-control" id="postalCode" placeholder="" value="" required>
                 	<div class="invalid-feedback">
                  		Valid home postal code is required.
@@ -101,16 +102,17 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-					<label for="rally">Rally Attended</label>
+					<label for="rally">Rally Attended <br> 您参加了哪个聚会?</label>
 					<select class="custom-select d-block w-100" id="rally" required>
 						<option value="">Choose...</option>
-						<option value="A">Friday, 17 May 7:30PM (English)</option>
-						<option value="B">Saturday, 18 May 10:30AM (Children & Families)</option>
-						<option value="C">Saturday, 18 May 7:30PM (Chinese)</option>
-						<option value="D">Saturday, 18 May 7:30PM (Tamil)</option>
-						<option value="E">Sunday, 19 May 10:30AM (Filipino/English)</option>
-						<option value="F">Sunday, 19 May 2:00PM (Hindi)</option>
-						<option value="G">Sunday, 19 May 7:30PM (English)</option>
+						<option value="A">Friday, 17 May 7:30PM (English) - 5月17日，星期五（下午7:30半 英语）</option>
+						<option value="B">Saturday, 18 May 10:30AM (Children & Families) - 5月18日，星期六（上午10:30 儿童和家庭）</option>
+						<option value="C">Saturday, 18 May 7:30PM (Chinese) - 5月18日, 星期六（上午7:30 华语）</option>
+						<option value="D">Saturday, 18 May 7:30PM (Tamil) - 5月18日,星期六（上午7:30 泰米尔语 ）</option>
+						<option value="E">Sunday, 19 May 10:30AM (Filipino/English) - 5月19日，星期日（上午10:30半 菲律宾/英语）</option>
+						<option value="F">Sunday, 19 May 2:00PM (Hindi) - 星期日（上午2pm, 印地语时间）</option>
+						<option value="G">Sunday, 19 May 7:30PM (English) - 5月19日, 星期日（下午7:30半 英语）</option>
+						<option value="H">None</option>
 					</select>
 					<div class="invalid-feedback">
 	                	Valid rally attended is required.
@@ -118,7 +120,7 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-					<label for="language">Preferred Language</label>
+					<label for="language">Preferred Language <br> 您的官方语言</label>
 					<select class="custom-select d-block w-100" id="language" required>
 						<option value="">Choose...</option>
 						<option value="English">English</option>
@@ -135,26 +137,26 @@
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="nameOfFriend">Name of the person who invited you <span>(Optional)</span></label>
+                	<label for="nameOfFriend">Name of the person who invited you <span>(Optional)</span> <br> 带您参加此活动邀请人的名字</label>
                 	<input type="text" class="form-control" id="nameOfFriend" placeholder="" value="">
               	</div>
 
               	<div class="col-md-6 mb-3">
-                	<label for="phoneNoFriend">Friend's Phone No. <span>(Optional)</span></label>
+                	<label for="phoneNoFriend">Friend's Phone No. <span>(Optional)</span> <br> 带您参加此活动的朋友电话号码</label>
                 	<input type="tel" class="form-control" id="phoneNoFriend" value="+65">
               	</div>
 
               	<div class="col-md-12 mb-3">
-					<label for="churchNameFriend">Name of church of the person who invited you</label>
-					<select class="custom-select d-block w-100" id="churchNameFriend" required>
+					<label for="churchNameFriend">Name of church of the person who invited you <br> 朋友教会的名字</label>
+					<select class="custom-select d-block w-100" id="churchNameFriend" data-live-search="true" required>
 					</select>
 					<div class="invalid-feedback">
-	                	Valid preferred language is required.
+	                	Valid name of church of the person who invited you is required.
 	             	</div>
               	</div>
 
               	<div class="col-md-12 mb-3">
-                	<label for="comments">Additional Comments / Prayer Request  <span>(Optional)</span></label>
+                	<label for="comments">Additional Comments / Prayer Request  <span>(Optional)</span> <br> 附加评论/祷告需求</label>
                 	<textarea class="form-control" id="comments" rows="5"></textarea>
               	</div>
 
@@ -209,8 +211,10 @@
 	</div>
 
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="js/main.min.js"></script>
 
 </body>
 </html>
